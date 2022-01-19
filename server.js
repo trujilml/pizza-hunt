@@ -14,7 +14,7 @@ app.use(require('./routes'));
 app.listen(PORT, () => console.log(`🌍 Connected on localhost:${PORT}`));
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/pizza-hunt', {
-    userNewUrlParser: true,
+    useNewUrlParser: true,
     useUnifiedTopology: true
 });
 
