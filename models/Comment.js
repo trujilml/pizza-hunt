@@ -58,8 +58,4 @@ CommentSchema.virtual('replyCount').get(function() {
 
 const Comment = model('Comment', CommentSchema);
 
-const Reply = model('Reply', ReplySchema);
-
 module.exports = Comment;
-
-module.exports = Reply;
