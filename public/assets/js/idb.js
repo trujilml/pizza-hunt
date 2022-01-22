@@ -28,3 +28,15 @@ request.onerror = function(event) {
     //log error here 
     console.log(event.target.errorCode);
 };
+
+//this function will be executed if we attempt to submit a new pizza
+function saveRecord(record) {
+    //open a new transaction wit the database with read and write permission
+    const transaction = db.transaction(['new_pizza'], 'readwrite');
+
+    //access the object store for `new_pizza
+    const pizzaObjectStore = transaction.ObjectStore('new_pizza');
+
+    //add record to your store with add method
+    pizzaObjectStore.add(record);
+}
